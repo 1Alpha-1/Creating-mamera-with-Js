@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Camera using javascript</title>
+</head>
+<body>
+    <video src="" id="cam" autoplay></video>
+    <script>
+        const cam = document.getElementById('cam')
+        navigator.mediaDevices.getUserMedia({video:true})
+        .then(stream =>{
+            cam.srcObject = stream;
+        })
+        .catch(error =>{
+            console.error("Error accessing device Camera",error)
+        })
+    </script>
+</body>
+</html>
